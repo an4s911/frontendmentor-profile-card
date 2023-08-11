@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+:root {
+    --grey-color: hsl(0, 0%, 59%);
+    --dark-cyan: hsl(185, 75%, 39%);
+    --sat-blue: hsl(229, 23%, 23%);
+}
+
+main {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: var(--dark-cyan);
+
+    overflow: hidden;
+
+    color: var(--sat-blue);
+}
+
+section {
+    /* box-shadow: 10px 10px 1px hsl(185, 75%, 35%); */
+    display: grid;
+
+    grid-template-columns: 1fr 100px 1fr;
+    grid-template-rows: auto 50px 50px repeat(2, auto);
+
+    width: 330px;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+}
+
+.hero {
+    background-image: url("./images/bg-pattern-card.svg");
+
+    grid-row: 1 / 3;
+    grid-column: 1 / 4;
+
+    height: 150px;
+}
+
+.profile-pic {
+    grid-row: 2 / 4;
+    grid-column: 2 / 3;
+
+    display: grid;
+    place-content: center;
+    place-items: center;
+}
+
+.profile-pic > img {
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.info {
+    grid-row: 4 / 5;
+    grid-column: 1 / 4;
+
+    display: flex;
+    place-content: center;
+    place-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+
+    gap: 8px;
+}
+
+.info > .name-age {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.age {
+    color: var(--grey-color);
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.info > .city {
+    color: var(--grey-color);
+    font-size: 0.9em;
+}
+
+.stats {
+    border-top: 0.5px solid rgba(148, 148, 148, 0.6);
+    grid-row: 5 / 6;
+    grid-column: 1 / 4;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    place-content: center;
+    padding: 20px 40px;
+}
+
+.stats > div {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 3px;
+}
+
+.stats h4 {
+    font-size: 1.2em;
+}
+
+.stats p {
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    color: var(--grey-color);
+}
+
+.bg-pattern-container {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.bg-pattern-container-top {
+    top: 0;
+    left: 0;
+}
+
+.bg-pattern-container-bottom {
+    bottom: 0;
+    right: 0;
+}
+
+.bg-pattern {
+    position: absolute;
+    overflow: hidden;
+    width: 600px;
+    z-index: 0;
+}
+
+.bg-pattern-top {
+    top: -300px;
+    left: -400px;
+}
+
+.bg-pattern-bottom {
+    bottom: -300px;
+    right: -400px;
+}
+
+@media screen and (min-width: 1080px) {
+    section {
+        width: 350px;
+    }
+
+    .bg-pattern {
+        width: 1000px;
+    }
+
+    .bg-pattern-top {
+        top: -500px;
+        left: -300px;
+    }
+
+    .bg-pattern-bottom {
+        bottom: -650px;
+        right: -200px;
+    }
+}
